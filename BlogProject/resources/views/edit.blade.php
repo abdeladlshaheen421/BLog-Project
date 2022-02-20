@@ -6,16 +6,20 @@
 <div class="card my-5">
     <div class="card-header text-center">Update Post</div>
     <div class="card-body ">
-        <form action="" method="post">
-            
-            <input type="hidden" value="{{$post}}">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" name="title">
-            <label for="title" class="form-label">Title</label>
-            <textarea type="description" name="desscription" class="form-control"></textarea>
-            <label for="authorName" class="form-label">author name</label>
-            <input type="text" name="authorName" class="form-control">
-            <a href="" class="btn btn-primary my-2">Update</a>
+        <form action="{{route('posts.update',$post)}}" method="post">
+            @csrf
+            @method('PUT')
+            <label for="title" class="form-label mt-3">Title</label>
+            <input type="text" class="form-control" value="{{$post->title}}" name="title">
+            <label for="title" class="form-label mt-3" >Description</label>
+            <textarea type="description" name="description" class="form-control">{{$post->description}}</textarea>
+            <label for="user_id" class="form-label mt-3" >Author Name</label>
+            <select class="form-control" name="user_id" >
+                @foreach ($users as $user)
+                    <option value="{{$user->id}}">{{$user->name}}</option>
+                @endforeach    
+            </select>
+            <input type="submit" value="Update" class="btn btn-primary my-2">
         </form>
     </div>
 </div>
