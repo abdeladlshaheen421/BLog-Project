@@ -1,8 +1,8 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 @section('title')
-    create
+    Show
 @endsection
-@section('body')
+@section('content')
     <div class="card my-5">
         <div class="card-header text-center h2 text-light bg-dark">{{$post->title}}</div>
         <div class="card-body bg-secondary ">
@@ -17,7 +17,7 @@
                 </tr>
                 <tr scope="row">
                     <td>Created By</td>
-                    <td class="text-danger">{{$post->user->name}}</td>
+                    <td class="text-danger">{{$post->user ? $post->user->name : "Not Found"}}</td>
                 </tr>
                 <tr scope="row">
                     <td>Created At</td>
