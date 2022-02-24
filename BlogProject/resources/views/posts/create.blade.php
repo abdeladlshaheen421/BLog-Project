@@ -1,11 +1,8 @@
 @extends('layouts.app')
-{{-- @section('title')
-    create
-@endsection --}}
 @section('content')
    
-    <div class="card my-5">
-        <div class="card-header text-center">New Post</div>
+    <div class="card my-1 w-50 mx-auto">
+        <div class="card-header text-center h2 text-white bg-secondary shadow">New Post</div>
         <div class="card-body ">
             <form action="{{route('posts.store')}}" method="post">
                 @csrf

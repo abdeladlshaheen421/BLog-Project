@@ -6,6 +6,7 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use App\Models\User;
+use Carbon\Carbon;
 use GuzzleHttp\Psr7\Request;
 
 class PostController extends Controller
@@ -14,7 +15,8 @@ class PostController extends Controller
     public function index()
     {
         //THIS TO get all posts from table
-        $posts=Post::paginate(10);
+       
+        $posts=Post::paginate(5);
         return view('posts.index',['posts'=> $posts]);
     }
     public function create()

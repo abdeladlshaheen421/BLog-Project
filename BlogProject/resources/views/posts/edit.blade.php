@@ -3,8 +3,8 @@
     edit
 @endsection
 @section('content')
-<div class="card my-5">
-    <div class="card-header text-center">Update Post</div>
+<div class="card my-1 w-50 mx-auto">
+    <div class="card-header text-center h2 text-primary bg-light shadow-sm">Update Post</div>
     <div class="card-body ">
         <form action="{{route('posts.update',$post)}}" method="post">
             @csrf
